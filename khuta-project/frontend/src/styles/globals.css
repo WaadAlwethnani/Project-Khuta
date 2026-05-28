@@ -1566,4 +1566,92 @@ body.dark .secondary-btn {
     .upcoming-grid {
         grid-template-columns: 1fr;
     }
+}/* حاوية البانر الأساسية المعتمدة على الخلفية */
+.hero-welcome-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 360px; /* يعطي عمق وارتفاع ممتاز مثل الصورة تماماً */
+    padding: 48px 6%;
+    border-radius: 28px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* طبقة التعتيم الفخمة لبروز النص والكلام */
+.hero-welcome-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(16, 28, 43, 0.85), rgba(16, 28, 43, 0.4));
+    z-index: 1;
+}
+
+/* حاوية النص */
+.hero-welcome-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: start; /* محاذاة النص واللوجو تلقائياً حسب اتجاه اللغة */
+    width: 100%;
+}
+
+/* تنسيق العنوان الرئيسي المدمج معه اللوجو */
+.hero-welcome-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #ffffff; /* أبيض ثابت ليتناسب مع الخلفية المظلمة */
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px; /* المسافة بين اللوجو و كلمة خُطى */
+}
+
+/* استايل الشعار بجانب الكلمة */
+.hero-welcome-logo {
+    height: 58px; /* متناسق تماماً مع حجم النص المرتفع */
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+/* استايل الوصف */
+.hero-welcome-content p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 600px;
+    font-weight: 500;
+}
+
+/* دقة التجاوب مع شاشات الجوال */
+@media (max-width: 768px) {
+    .hero-welcome-banner {
+        min-height: 280px;
+        padding: 32px 20px;
+    }
+    .hero-welcome-content {
+        text-align: center;
+        align-items: center;
+    }
+    .hero-welcome-content h1 {
+        font-size: 32px;
+        justify-content: center;
+        gap: 10px;
+    }
+    .hero-welcome-logo {
+        height: 42px;
+    }
+    .hero-welcome-content p {
+        font-size: 14px;
+    }
 }
